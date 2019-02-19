@@ -6,18 +6,18 @@ ignored = [
   non-go = true
   unused-packages = true
 
-# client-go 7.0.0 uses apimachinery 302974c03f7e50f16561ba237db776ab93594ef6
-# and api 73d903622b7391f3312dcbac6483fed484e185f8 (see Godep.json). go dep
+# client-go 10.0.0 uses apimachinery 2b1284ed4c93a43499e781493253e2ac5959c4fd
+# and api a61488babbd64b32da2ed985e2e70fe7b4ffc05a (see Godep.json). go dep
 # is unable to match Godep.json automatically so have to specify here.
 [[constraint]]
     name = "k8s.io/client-go"
-    version = "v7.0.0"
+    version = "v10.0.0"
 [[override]]
     name = "k8s.io/apimachinery"
-    revision = "302974c03f7e50f16561ba237db776ab93594ef6"
+    revision = "2b1284ed4c93a43499e781493253e2ac5959c4fd"
 [[override]]
     name = "k8s.io/api"
-    revision = "73d903622b7391f3312dcbac6483fed484e185f8"
+    revision = "a61488babbd64b32da2ed985e2e70fe7b4ffc05a"
 
 # Pin these dependencies to the exact versions listed in the
 # Makefile. We can't even allow the patch version to float as that
@@ -33,3 +33,7 @@ ignored = [
 [[override]]
     name = "github.com/prometheus/client_golang"
     version = "=v0.9.1"
+
+[[override]]
+    name = "github.com/openshift/cluster-api"
+    branch = "release-4.0"
